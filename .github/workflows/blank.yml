@@ -18,6 +18,10 @@ jobs:
       region: us-east-1
       account: 123456789012
     # The type of runner that the job will run on
+
+      username: ${{secrets.USERNAME}}
+      password: ${{secrets.PASSWORD}}
+
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -26,7 +30,11 @@ jobs:
         run: echo "Hola mundo"
 
       - name: "Mostrando variables de entorno"
+        if: ${{ env.platform == 'aws' }}
         run: |
           echo "Valor de platform: ${{ env.platform }}"
           echo "Valor de region: ${{ env.region }}"
           echo "Valor de account: ${{ env.account }}"
+
+          echo "Valor de secret username: ${{ env.username }}"
+          echo "Valor de secret password: ${{ env.password }}"
