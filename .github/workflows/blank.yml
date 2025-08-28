@@ -38,3 +38,10 @@ jobs:
 
           echo "Valor de secret username: ${{ env.username }}"
           echo "Valor de secret password: ${{ env.password }}"
+
+      - name: "Mostrando valores solo si el usuario es correcto"
+        # Sólo para ver que si se leen los secrets
+        if: ${{ env.username == 'pablo'j}}
+        run: |
+          echo "Si existe el usuario"
+          
