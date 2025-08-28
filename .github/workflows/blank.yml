@@ -41,7 +41,7 @@ jobs:
 
       - name: "Mostrando valores solo si el usuario es correcto"
         # Sólo para ver que si se leen los secrets
-        if: ${{ env.username == 'pablo'j}}
+        if: ${{ env.username == 'pablo'}}
         run: |
           echo "Si existe el usuario"
           
