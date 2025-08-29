@@ -9,20 +9,10 @@ jobs:
             - name: Checkout repo
               uses: actions/checkout@v5
 
-            - name: Instalando el programa Cowsay
-              run: sudo apt-get install cowsay -y
-            
-            # Corriendo librerías de teceros
-            - name: Ejecutando Cowsay
-              run: cowsay -f dragon "Run for cover, I am a DRAGON... RAWR" >> dragon.txt
-            
-            - name: Checa si el archivo existe
-              run: grep -i "dragon" dragon.txt
-
-            - name: Leer el archivo
-              run: cat dragon.txt
-            
-            - name: Lista los archivos
+            - name: Lista de archivos
               run: ls -ltra
+
+            - name: Ejecutando script shell
+              run: ./ascii-script.sh
 
             
