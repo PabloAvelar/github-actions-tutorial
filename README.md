@@ -1,3 +1,3 @@
 # Hola, estoy probando Github Actions
 
-cómo ven banda
+Esta es una prueba
