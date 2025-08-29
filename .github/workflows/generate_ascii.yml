@@ -12,7 +12,12 @@ jobs:
             - name: Lista de archivos
               run: ls -ltra
 
+            # Para correr script shell, se necesitan agregar permisos
+            # En este caso, es hacer que el script sea ejecutable
             - name: Ejecutando script shell
-              run: ./ascii-script.sh
+              run: |
+                chmod +x ascii-script.sh
+                ./ascii-script.sh
+
 
             
