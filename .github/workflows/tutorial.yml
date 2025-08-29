@@ -1,0 +1,17 @@
+name: Mi Primer Workflow aca chido pa
+
+# trigger
+on: push
+
+jobs:
+  primera_chamba:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bienvenido jaja
+        run: echo "Mi primer github actions yo solito hola"
+
+      - name: Lista los archivos
+        run: ls
+
+      - name: Lee el archivo readme
+        run: cat README.md
