@@ -15,7 +15,3 @@ jobs:
           echo "Mi primer github actions yo solito hola"
           ls -ltra
           cat README.md
-
-      # Corriendo librerías de teceros
-      - name: Generar ASCII Arte
-        run: cowsay -f dragon "Run for cover, I am a DRAGON... RAWR" >> dragon.txt
