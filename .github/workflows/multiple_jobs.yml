@@ -1,0 +1,35 @@
+name: Multiple jobs en un mismo workflow
+
+on: push
+
+# Cada job usa su propia Virtual Machine, son diferentes.
+jobs:
+    build_job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Instalar cowsay
+              run: sudo apt-get install cowsay -y
+
+            - name: Ejecutar cowsay
+              run: cowsay -f dragon "Run for cover, I am a DRAGON... RAWR" >> dragon.txt
+            
+            - name: Dormir por 30 segundos
+              run: sleep 30
+
+    test_job2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Duerme por 10 segundos
+              run: sleep 10
+
+            - name: Prueba que el archivo existe
+              run: grep -i "dragon" dragon.txt
+
+    deploy_job3:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Leyendo el archivo
+              run: cat dragon.txt
+
+            - name: Desplegar
+              run: echo Deploying...
