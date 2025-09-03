@@ -12,7 +12,7 @@ jobs:
               run: docker info
 
             - name: Run images
-              run: docker run hello-word
+              run: docker run hello-world
     
     despliegue-en-windows:
         runs-on: windows-latest
