@@ -8,15 +8,16 @@ jobs:
     deploy:
         strategy:
           fail-fast: false  # prevents the workflow to be cancelled when a job fails
+          max-parallel: 2
           matrix:
-            sistemas-operativos: [ubuntu-latest, ubuntu-20.04, windows-latest]
+            sistemas-operativos: [ubuntu-latest, windows-latest]
             imagenes: [hello-world, alpine]
             exclude:
               - imagenes: alpine
                 sistemas-operativos: windows-latest
-            include:
-              - imagenes: amd64/alpine
-                sistemas-operativos: ubuntu-20.04
+            # include:
+              # - imagenes: amd64/alpine
+                # sistemas-operativos: ubuntu-20.04
         runs-on: ${{ matrix.sistemas-operativos }}
         steps:
             - name: Echo Docker Details
