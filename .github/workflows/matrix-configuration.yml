@@ -18,7 +18,7 @@ jobs:
 
             include:
               - imagenes: amd64/alpine
-                sistemas-operativos: ubuntu-latest
+                sistemas-operativos: ubuntu-20.04
         runs-on: ${{ matrix.sistemas-operativos }}
         steps:
             - name: Echo Docker Details
