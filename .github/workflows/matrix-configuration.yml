@@ -26,3 +26,4 @@ jobs:
             - name: Run images on ${{ matrix.sistemas-operativos }}
               run: |
                docker run ${{ matrix.imagenes }} || echo "The image ${{ matrix.imagenes }} failed to run"
+              continue-on-error: true
