@@ -21,7 +21,7 @@ jobs:
         runs-on: ${{ matrix.sistemas-operativos }}
         steps:
             - name: Echo Docker Details
-              run: echo docker info
+              run: docker info
 
             - name: Run images on ${{ matrix.sistemas-operativos }}
-              run: echo docker run ${{ matrix.imagenes }}
+              run: docker run ${{ matrix.imagenes }}
