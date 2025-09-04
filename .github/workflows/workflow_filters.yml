@@ -1,4 +1,4 @@
-name: Exploring workflow fliters and activities
+name: Exploring workflow fliters and activities - 1
 
 on:
     workflow_dispatch: 
