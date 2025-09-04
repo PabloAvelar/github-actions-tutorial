@@ -2,5 +2,4 @@
 
 Esta es una prueba
 
-Random text
-Seconds commit
+He hecho cambios en README.md
