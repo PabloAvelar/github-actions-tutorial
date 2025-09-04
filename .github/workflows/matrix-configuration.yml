@@ -7,15 +7,14 @@ on:
 jobs:
     deploy:
         strategy:
-          max-parallel: 2
           fail-fast: false  # prevents the workflow to be cancelled when a job fails
+          max-parallel: 2
           matrix:
             sistemas-operativos: [ubuntu-latest, ubuntu-20.04, windows-latest]
             imagenes: [hello-world, alpine]
             exclude:
               - imagenes: alpine
                 sistemas-operativos: windows-latest
-
             include:
               - imagenes: amd64/alpine
                 sistemas-operativos: ubuntu-20.04
