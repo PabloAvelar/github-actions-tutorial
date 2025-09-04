@@ -12,9 +12,9 @@ jobs:
           matrix:
             sistemas-operativos: [ubuntu-latest, windows-latest]
             imagenes: [hello-world, alpine]
-            exclude:
-              - imagenes: alpine
-                sistemas-operativos: windows-latest
+            # exclude:
+            #   - imagenes: alpine
+            #     sistemas-operativos: windows-latest
             # include:
               # - imagenes: amd64/alpine
                 # sistemas-operativos: ubuntu-20.04
