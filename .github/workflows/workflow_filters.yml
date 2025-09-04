@@ -1,0 +1,30 @@
+name: Exploring workflow fliters and activities
+
+on:
+    workflow_dispatch: 
+    pull_request:
+        types: 
+            - opened
+            - closed
+        paths-ignore: 
+            - README.md
+
+        branches:
+            - main
+            
+    push:
+        branches: 
+            - main
+            - '!feature/*'  # ignoring all branches with prefix 'feature/'
+
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Running step
+              run: echo this workflow/job/step is executed for event type - ${{ github.event_name }}
+
+
+
+        
